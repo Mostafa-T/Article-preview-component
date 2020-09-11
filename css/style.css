@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+/*
+
+===============================
+  CSS INDEX
+===============================
+
+-- Global styling
+
+
+*/
+
+/* Start Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color:   hsl(210, 46%, 95%);
+}
+
+/* End Global Styling */
+
+/* Start Article Wrapper */
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 15px;
+  margin: auto;
+}
+
+.article-warpper {
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 15px;
+  margin: 0rem 1rem;
+
+}
+.article-img {
+  background-image: url('../images/drawers.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+  height: 350px;
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+
+}
+
+.article-content {
+  position: relative;
+  padding: 0rem 3rem ;
+  margin: 0rem 2rem;
+}
+.article-content h1 {
+  font-size: 30px;
+  margin-bottom: 1rem;
+  color: hsl(217, 19%, 35%);
+}
+
+.article-content p {
+  color:  hsl(214, 17%, 51%);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.profile {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.author img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 1rem ;
+}
+
+.share-btn {
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  border: none;
+}
+
+.share-menu {
+  position: absolute;
+  bottom: 75px;
+  right: -75px;
+  list-style-type: none;
+  background-color: hsl(217, 19%, 35%);
+  min-width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 15px;
+  transition: .3s ease-in-out;
+
+  visibility: hidden;
+  opacity: 0;
+}
+
+.share-menu.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.share-menu::after {
+  position: absolute;
+  bottom: -8px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid hsl(217, 19%, 35%);
+}
+.share-menu > li {
+  cursor: pointer;
+  padding: 0rem 1rem;
+}
+
+.share-menu span {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: hsl(214, 17%, 51%);
+}
+
+/* End Article Wrapper */
+
+
+/* Start Media Queries */
+@media (min-width: 768px) {
+  .container {
+    width: 750;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .article-warpper {
+    flex-direction: column;
+    -ms-flex-direction: column;
+  }
+
+  .article-img {
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 15px;
+  }
+
+  .article-content h1 {
+    font-size: 25px;
+    margin-top: 2rem;
+  }
+  .article-content p {
+    margin-bottom: 2rem;
+  }
+
+  .share-btn {
+    height: 28px;
+    width: 28px;
+    line-height: 28px;
+    position: relative;
+    z-index: 3;
+
+  }
+  .share-menu {
+    justify-content: flex-start;
+    left: -30px; 
+    right: -30px;
+    bottom: 0;
+    padding: 1rem 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  .share-menu > li  {
+    padding: .7rem ;
+  }
+  .share-menu > li > img {
+    width: 20px;
+  }
+
+  .share-menu::after {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .article-content {
+    position: relative;
+    padding: 0rem 1rem;
+    margin: 0rem 1rem;
+  }
+
+  .article-content h1 {
+    font-size: 18px;
+    margin-top: 2rem;
+  }
+
+  .article-content p {
+    margin-bottom: 2rem;
+    font-size: 14px;
+  }
+
+  .author-info h4 {
+    font-size: 14px;
+  }
+  .author-info span {
+    font-size: 12px;
+  }
+
+  .share-btn {
+    height: 28px;
+    width: 28px;
+    line-height: 28px;
+    position: relative;
+    z-index: 3;
+
+  }
+  .share-menu {
+    justify-content: flex-start;
+    left: -15px; 
+    right: -15px;
+    bottom: 0;
+    padding: 1rem 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  .share-menu > li  {
+    padding: .7rem ;
+  }
+  .share-menu > li > img {
+    width: 20px;
+  }
+
+  .share-menu::after {
+    display: none;
+  }
+}
+/* End Media Queries */
